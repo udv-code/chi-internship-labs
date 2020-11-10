@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="chi-internship-labs-lab1" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="assets/test.txt" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="chi-internship-labs" TARGET_NAME="chi-internship-labs-lab1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="chi-internship-labs" RUN_TARGET_NAME="chi-internship-labs-lab1">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>
