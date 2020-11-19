@@ -20,6 +20,7 @@
         <pair source="cpp" header="hpp" fileNamingConvention="SNAKE_CASE" />
         <pair source="c" header="h" fileNamingConvention="NONE" />
         <pair source="cu" header="cuh" fileNamingConvention="NONE" />
+        <pair source="cpp" header="inl" fileNamingConvention="SNAKE_CASE" />
       </extensions>
       <rules>
         <rule entity="MACRO" visibility="ANY" specifier="ANY" prefix="" style="SCREAMING_SNAKE_CASE" suffix="" />
