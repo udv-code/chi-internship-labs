@@ -7,6 +7,7 @@ add_executable(
 
 		list.hpp
 		pair.hpp
-)
 
-add_assets_dir(assets)
+		inl/list.inl
+		inl/pair.inl
+)
