@@ -12,9 +12,7 @@
 
 namespace sict
 {
-
-
-	void iProduct::display(std::ostream& os) const
+	void Product::display(std::ostream& os) const
 	{
 		os << std::setw(FW) << mId << ' '
 		   << std::setw(FW) << std::fixed << std::setprecision(2) << price() << '\n';
@@ -56,7 +54,7 @@ namespace sict
 
 		if (taxable == -1)
 		{
-			return new iProduct{ id, price };
+			return new Product{ id, price };
 		}
 		else
 		{
