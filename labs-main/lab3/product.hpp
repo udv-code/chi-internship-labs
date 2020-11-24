@@ -20,20 +20,16 @@ namespace sict
 	class iProduct
 	{
 	public:
-		iProduct(int id, double price, char tax) : mId { id }, mPrice { price }, mTax { tax } {};
+		iProduct(int id, double price) : mId{ id }, mPrice{ price }
+		{
+		};
 		~iProduct() = default;
 
-		[[nodiscard]] double price() const {
-			if (mTax == HT)
-			{
-				return mPrice * WITH_TAX(HT_C);
-			} else if (mTax == PT){
-				return mPrice * WITH_TAX(PT_C);
-			} else {
-				return mPrice;
-			}
+		[[nodiscard]] virtual double price() const
+		{
+			return mPrice;
 		};
-		void display(std::ostream& os) const;
+		virtual void display(std::ostream& os) const;
 
 		static iProduct* readRecord(std::ifstream& file);
 	public:
@@ -43,9 +39,29 @@ namespace sict
 			return os;
 		}
 
-	private:
+	protected:
 		int mId;
 		double mPrice;
+	};
+
+	class TaxableProduct : public iProduct
+	{
+	public:
+		TaxableProduct(int id, double price, char tax) : iProduct{ id, price }, mTax{ tax }{}
+
+		[[nodiscard]] double price() const override {
+			if (mTax == HT)
+			{
+				return mPrice * WITH_TAX(HT_C);
+			} else if (mTax == PT){
+				return mPrice * WITH_TAX(PT_C);
+			} else {
+				return mPrice;
+			}
+		};
+
+		void display(std::ostream& os) const override;
+	private:
 		char mTax;
 	};
 }

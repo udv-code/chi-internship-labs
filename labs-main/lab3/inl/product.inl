@@ -16,6 +16,12 @@ namespace sict
 
 	void iProduct::display(std::ostream& os) const
 	{
+		os << std::setw(FW) << mId << ' '
+		   << std::setw(FW) << std::fixed << std::setprecision(2) << price() << '\n';
+	}
+
+	void TaxableProduct::display(std::ostream& os) const
+	{
 		std::string tax;
 		if (mTax == PT)
 		{
@@ -48,7 +54,15 @@ namespace sict
 			return nullptr;
 		}
 
-		return new iProduct{ id, price, taxable };
+		if (taxable == -1)
+		{
+			return new iProduct{ id, price };
+		}
+		else
+		{
+			return new TaxableProduct{ id, price, taxable };
+		}
+
 	}
 }
 
